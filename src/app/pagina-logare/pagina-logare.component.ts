@@ -32,7 +32,7 @@ public numeUtilizator: string = '';
 
   ngOnInit() {
     if (this.authService.esteConectat()) {
-      this.router.navigate(['/cautareBilete']);
+      this.router.navigate(['/']);
       return false;
     }
     this.seIncarcaPagina = false;
@@ -48,7 +48,7 @@ public numeUtilizator: string = '';
           this.authService.salvareUsername(this.form.username);
           this.authService.salvareToken(token);
           this.numeUtilizator = this.form.username;
-          this.router.navigate(['/cautareBilete']);
+          this.router.navigate(['/diagnostic']);
         }
       },
       error: () => {

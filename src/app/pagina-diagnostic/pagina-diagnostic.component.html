@@ -1,0 +1,11 @@
+<div>
+    <h2>Diagnostic Prediction</h2>
+  
+    <input type="file" (change)="fisierUploadat($event)" />
+    <button (click)="onSubmit()">Submit</button>
+  
+    <div *ngIf="rezultat">
+      <h3>Prediction: {{ rezultat }}</h3>
+    </div>
+  </div>
+  

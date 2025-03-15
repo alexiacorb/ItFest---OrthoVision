@@ -8,47 +8,47 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:8080/api/auth';
+  private baseUrl = 'http://localhost:5433'; 
   private isBrowser: boolean;
 
-constructor(private http: HttpClient,@Inject(PLATFORM_ID) platfromId: Object) {
-  this.isBrowser = isPlatformBrowser(platfromId);
-}
-
-logare(logareRequest: any): Observable<any> {
-  return this.http.post(`${this.baseUrl}/logare`, logareRequest);
-}
-
-creareCont(creareContRequest: any): Observable<any> {
-  return this.http.post(`${this.baseUrl}/creareCont`, creareContRequest);
-}
-
-salvareToken(token: string): void {
-  if(this.isBrowser){
-    localStorage.setItem('authToken', token);
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) platfromId: Object) {
+    this.isBrowser = isPlatformBrowser(platfromId);
   }
-}
 
-salvareUsername(username: string): void {
-  if(this.isBrowser)
-    localStorage.setItem('username', username);
-}
+  logare(logareRequest: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/logare`, logareRequest);
+  }
 
-getUsername(): string | null {
-  return this.isBrowser ? localStorage.getItem('username') : null;
-}
+  creareCont(creareContRequest: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/creareCont`, creareContRequest);
+  }
 
-getToken(): string | null {
-  return this.isBrowser ? localStorage.getItem('authToken') : null;
-}
+  salvareToken(token: string): void {
+    if (this.isBrowser) {
+      localStorage.setItem('authToken', token);
+    }
+  }
 
-stergeToken(): void {
-  if(this.isBrowser)
-    localStorage.removeItem('authToken');
-}
+  salvareUsername(username: string): void {
+    if (this.isBrowser)
+      localStorage.setItem('username', username);
+  }
 
-esteConectat(): boolean {
-  return this.getToken() !== null;
-}
+  getUsername(): string | null {
+    return this.isBrowser ? localStorage.getItem('username') : null;
+  }
+
+  getToken(): string | null {
+    return this.isBrowser ? localStorage.getItem('authToken') : null;
+  }
+
+  stergeToken(): void {
+    if (this.isBrowser)
+      localStorage.removeItem('authToken');
+  }
+
+  esteConectat(): boolean {
+    return this.getToken() !== null;
+  }
 
 }
