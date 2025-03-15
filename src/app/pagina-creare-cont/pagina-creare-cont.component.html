@@ -1,0 +1,37 @@
+<div class="body">
+<div class="header">
+<a href=""><img src="assets/logoBun.png" width="80" height="60" alt="image"></a>
+  </div>
+<div class="pagCreareCont">
+  <form (ngSubmit)="onSubmit()">
+  <table>
+  <tbody>
+<tr>
+  <td colspan="2"><h2 id="creareCont">Creeaza un cont</h2></td>
+</tr>
+  <tr>
+    <td><input type="text" placeholder="Username" [(ngModel)]="form.username" name="username" required></td>
+  </tr>
+  <tr *ngIf="mesajUsername.length > 0">
+    <td class="atentionare">{{ mesajUsername }}</td>
+  </tr>
+  <tr>
+    <td><input type="email" placeholder="Email" [(ngModel)]="form.email" name="email" required></td>
+  </tr>
+  <tr *ngIf="mesajEmail.length > 0">
+    <td class="atentionare">{{ mesajEmail }}</td>
+  </tr>
+  <tr>
+    <td><input type="password" placeholder="Parola"[(ngModel)]="form.password" name="password" required></td>
+  </tr>
+  <tr *ngIf="mesajParola.length > 0">
+    <td class="atentionare">{{ mesajParola }}</td>
+  </tr>
+  <tr>
+    <td colspan="2"><button type="submit" class="butoaneCreareCont">Creare cont</button></td>
+  </tr>
+  </tbody>
+</table>
+  </form>
+</div>
+</div>

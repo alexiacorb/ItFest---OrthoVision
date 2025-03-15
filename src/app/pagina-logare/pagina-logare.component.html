@@ -1,0 +1,29 @@
+<div id="body" *ngIf="!seIncarcaPagina">
+<img src="assets/logoBun.png" id="logo" width="150" height="100" alt="image">
+<div class="pagCreareCont">
+  <form (ngSubmit)="onSubmit()">
+    <table>
+      <tbody>
+      <tr>
+        <td colspan="2"><h2 id="creareCont">Logheaza-te in cont</h2></td>
+      </tr>
+      <tr>
+        <td><input type="username" placeholder="Username" [(ngModel)]="form.username" name="username" required></td>
+      </tr>
+      <tr>
+        <td><input type="password" placeholder="Parola"[(ngModel)]="form.password" name="password" required></td>
+      </tr>
+      <tr *ngIf="mesaj.length > 0">
+        <td>
+          {{ mesaj }}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="submit" class="butoaneCreareLogare">Logare cont</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+</div>
+<router-outlet></router-outlet>
