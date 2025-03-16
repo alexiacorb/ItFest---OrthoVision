@@ -1,31 +1,24 @@
-/* Corpul paginii (ID #body):
-   Gradient pe tot ecranul + centrare pe verticală și orizontală */
+
    #body {
     min-height: 100vh;
-    background: linear-gradient(120deg, #f6d365, #fda085);
+    background: linear-gradient(120deg, #9d1b1b, #ff3700e2);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   
-    /* Așază elementele în coloană */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   
-    /* Pentru animația containerului */
     animation: fadeInDown 0.6s ease both;
   }
   
-  /* Logo-ul */
   #logo {
     margin-bottom: 2vh;
-    /* Eventual poți adăuga un mic efect de umbră la imagine:
-       box-shadow: 0 4px 8px rgba(0,0,0,0.2); */
+   
   }
   
-  /* Containerul pentru logare:
-     Efect tip “glassmorphism” + coloană centrată */
   .pagCreareCont {
     width: 80vw;
     max-width: 400px;
