@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center; 
   flex-direction: column;
-  background: linear-gradient(120deg, #9d1b1b, #ff3700e2);
+  background: linear-gradient(120deg, #e13737, #a53313e2);
 
 }
 
@@ -27,7 +27,7 @@
   width: 80vw;
   max-width: 800px;
   padding: 2rem;
-  background: rgba(98, 94, 94, 0.629);  
+  background: rgba(203, 170, 170, 0.629);  
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -99,15 +99,17 @@
   max-width: 200px;
   height: 3rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   border-radius: 20px;
   border: 1px solid #000000;
-  background: linear-gradient(45deg, #d37bee, #be55e5);
+  background: linear-gradient(45deg, #d755eb, #e55563);
   color: #ffffff;
   font-size: 1.2rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
   line-height: 3rem;
+  
 }
 
 .butoaneCreareCont:hover {
@@ -116,7 +118,6 @@
   transform: scale(1.05);
 }
 
-/* Stiluri responsivitate */
 @media (max-width: 768px) {
   .body {
     align-items: center;

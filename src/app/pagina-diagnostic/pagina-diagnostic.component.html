@@ -10,7 +10,6 @@
     
 
   <div class="container">
-    <!-- Sidebar -->
     <div class="sidebar">
       <h2>Medical Hub</h2>
       <ul>
@@ -21,18 +20,15 @@
       </ul>
     </div>
 
-    <!-- Main Content -->
     <div class="main-content">
       <header>
         <h1>Bine ați venit la OrthoVision</h1>
         <p>Sănătatea ta, prioritatea noastră.</p>
       </header>
 
-      <!-- Diagnostic Prediction Section -->
       <section class="diagnostic-prediction">
         <h2>Încarcă o imagine pentru a primi un diagnostic!</h2>
         
-        <!-- File Upload Section -->
         <input type="file" (change)="fisierUploadat($event)" />
         <button (click)="onSubmit()">Încarcă</button>
 
@@ -41,7 +37,6 @@
         </div>
       </section>
 
-      <!-- Medical Content Section -->
       <section class="medical-content">
         <h2 class="section-title">🌟 De ce să alegi <span>OrthoVision</span>?</h2>
         <div class="card">
