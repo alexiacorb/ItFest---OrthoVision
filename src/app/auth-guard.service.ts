@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, } from '@angular/router';
+import { CanActivate } from '@angular/router';
 import { AuthService } from './pagina-creare-cont/auth.service';
 import { Router } from '@angular/router';
 
@@ -12,12 +12,11 @@ export class AuthGuardService implements CanActivate {
 
   canActivate(): boolean {
     const esteConectat = this.authService.esteConectat();
-    if(esteConectat)
+    if (esteConectat) {
+      this.router.navigate(['/diagnostic']);
+      return false;  
+    } else {
       return true;
-    else{
-      this.router.navigate(['/logare']);
-      return false;
-    } 
+    }
   }
-      
 }

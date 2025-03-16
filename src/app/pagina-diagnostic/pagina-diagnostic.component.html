@@ -1,11 +1,61 @@
-<div>
-    <h2>Diagnostic Prediction</h2>
-  
-    <input type="file" (change)="fisierUploadat($event)" />
-    <button (click)="onSubmit()">Submit</button>
-  
-    <div *ngIf="rezultat">
-      <h3>Prediction: {{ rezultat }}</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Site - Diagnostic Prediction</title>
+  <link rel="stylesheet" href="pagina-diagnostic.component.scss">
+</head>
+<body>
+    
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Medical Hub</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Upload</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header>
+        <h1>Bine ați venit la OrthoVision</h1>
+        <p>Sănătatea ta, prioritatea noastră.</p>
+      </header>
+
+      <!-- Diagnostic Prediction Section -->
+      <section class="diagnostic-prediction">
+        <h2>Încarcă o imagine pentru a primi un diagnostic!</h2>
+        
+        <!-- File Upload Section -->
+        <input type="file" (change)="fisierUploadat($event)" />
+        <button (click)="onSubmit()">Încarcă</button>
+
+        <div *ngIf="rezultat">
+          <h3>Rezultatul este: {{ rezultat }}</h3>
+        </div>
+      </section>
+
+      <!-- Medical Content Section -->
+      <section class="medical-content">
+        <h2 class="section-title">🌟 De ce să alegi <span>OrthoVision</span>?</h2>
+        <div class="card">
+            <h3>🔬 Inteligență Artificială</h3>
+            <p>Algoritm avansat pentru detectarea fracturilor osoase din radiografii.</p>
+        </div>
+        <div class="card">
+            <h3>📊 Acuratețe de 96%</h3>
+            <p>Tehnologia noastră oferă rezultate precise și rapide.</p>
+        </div>
+    </section>
     </div>
   </div>
-  
+
+  <script src="scripts.js"></script>
+</body>
+</html>

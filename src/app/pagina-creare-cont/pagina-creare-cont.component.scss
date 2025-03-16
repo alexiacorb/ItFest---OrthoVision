@@ -1,84 +1,162 @@
-.header {
-  margin-left: 5vw;
-}
-
+/* Fundal pe toată pagina, cu gradient */
 .body {
-  height: 100vh;
+  min-height: 100vh;
+  /* Gradient modern */
+  background: linear-gradient(120deg, #f6d365, #fda085);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* Pentru centralizare verticală a conținutului */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
 }
 
+/* Header simplu: logoul poziționat un pic la stânga */
+.header {
+  margin-left: 5vw;
+  margin-top: 2vh;
+}
+
+/* Efect de “glass” (transparență + blur) pentru containerul de creare cont */
 .pagCreareCont {
-  margin-top: 10vh;
+  margin: 10vh auto;
   text-align: center;
+  /* Dimensiuni responsive + aspect tip “card” */
+  width: 40vw;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 0.6s ease both; /* Animație de intrare */
+}
 
-  .atentionare {
-    color: red;
-    font-size: 1rem;
+/* Stilizare titlu din interiorul formularului */
+#creareCont {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-family: Constantia, serif;
+  color: #2c3e50;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Animație de intrare de sus în jos */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
   }
-
-  table {
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Constantia, serif;
-    background-color: rgb(252, 248, 248);
-    border: 1px solid rgba(200, 200, 200, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 3vw;
-    font-size: 1.5rem;
-    height: auto;
-    width: 30vw;
-
-    input {
-      border-radius: 6px;
-      border: 1px solid #333333;
-      height: 5vh;
-      width: 15vw;
-    }
-  }
-
-  .butoaneCreareCont {
-    cursor: pointer;
-    display: inline-block;
-    width: 8vw;
-    height: 6vh;
-    margin-top: 2vh;
-    border-radius: 20px;
-    border: 1px solid #000000;
-    background-color: rgba(35, 146, 178, 0.87);
-    overflow: hidden;
-    text-align: center;
-    line-height: 6vh;
-
-    a {
-      color: #ffffff;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* Masa cu input-uri */
+.pagCreareCont table {
+  margin: 0 auto;
+  font-family: Constantia, serif;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 500px; /* Pentru control la ecrane mari */
+}
+
+/* “Celula” generală */
+.pagCreareCont table td {
+  padding: 0.8rem;
+}
+
+/* Stil general pentru input-uri */
+.pagCreareCont table input {
+  border-radius: 0.5rem;
+  border: 1px solid #333;
+  height: 3rem;
+  width: 100%;
+  max-width: 300px; /* Previne lățimi exagerate la ecrane mari */
+  padding: 0 1rem;
+  font-size: 1rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  outline: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Efect la focus pentru input */
+.pagCreareCont table input:focus {
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+  transform: scale(1.02);
+}
+
+/* Mesajele de atenționare (erori / validări) */
+.pagCreareCont .atentionare {
+  color: red;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Butonul de creare cont */
+.butoaneCreareCont {
+  cursor: pointer;
+  display: inline-block;
+  width: 60%;
+  max-width: 200px;
+  height: 3rem;
+  margin-top: 1rem;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  background: linear-gradient(45deg, #1abc9c, #16a085);
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  line-height: 3rem;
+}
+
+/* Efect la hover / click pe buton */
+.butoaneCreareCont:hover {
+  background: linear-gradient(45deg, #16a085, #1abc9c);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Responsivitate sub 600px */
 @media (max-width: 600px) {
-  .pagCreareCont table {
-    width: 90%;
-    padding: 4vw;
-    font-size: 1rem;
-  }
-
-  .pagCreareCont table input {
-    width: 80%;
-    height: 5vh;
-  }
-
-  .butoaneCreareLogare {
-    width: 40vw;
-    height: 7vh;
-    line-height: 7vh;
+  .body {
+    align-items: center; 
+    justify-content: flex-start;
   }
 
   .header {
     margin-left: 2vw;
+  }
+
+  .pagCreareCont {
+    width: 80vw;
+    margin-top: 5vh;
+    padding: 2rem 1rem;
+  }
+
+  .pagCreareCont table {
+    width: 100%;
+    font-size: 1rem;
+    max-width: 400px;
+  }
+
+  .pagCreareCont table input {
+    width: 100%;
+    height: 3rem;
+    max-width: 100%;
+  }
+
+  .butoaneCreareCont {
+    width: 100%;
+    max-width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
   }
 }

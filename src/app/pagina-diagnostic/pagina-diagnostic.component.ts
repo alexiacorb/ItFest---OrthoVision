@@ -15,7 +15,7 @@ export class PaginaDiagnosticComponent {
   constructor(private http: HttpClient) {}
 
   fisier: File | null = null;
-  rezultat: string = '';  // This will hold the result from the backend
+  rezultat: string = ''; 
 
   fisierUploadat(event: any): void {
     this.fisier = event.target.files[0];
@@ -31,7 +31,11 @@ export class PaginaDiagnosticComponent {
 
         this.http.post<{ predictie: string }>(apiDiagnostic, formData).subscribe(
           (response) => {
-            this.rezultat = response.predictie;  // Store the prediction result
+            this.rezultat = response.predictie;  
+            if(response.predictie == "Fractured")
+              this.rezultat = "Nefracturat";
+            else
+              this.rezultat = "Fracturat";
             console.log('Predicted class:', this.rezultat);
           },
           (error) => {
