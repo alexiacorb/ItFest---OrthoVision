@@ -1,0 +1,51 @@
+<div class="body">
+  <div class="header">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  </div>
+
+  <div class="pagCreareCont">
+    <form (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="left">
+            <h2 id="creareCont">Creeaza un cont</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td><input type="text" placeholder="Username" [(ngModel)]="form.username" name="username" required></td>
+                </tr>
+                <tr *ngIf="mesajUsername.length > 0">
+                  <td class="atentionare">{{ mesajUsername }}</td>
+                </tr>
+                <tr>
+                  <td><input type="email" placeholder="Email" [(ngModel)]="form.email" name="email" required></td>
+                </tr>
+                <tr *ngIf="mesajEmail.length > 0">
+                  <td class="atentionare">{{ mesajEmail }}</td>
+                </tr>
+                <tr>
+                  <td><input type="password" placeholder="Parola" [(ngModel)]="form.password" name="password" required></td>
+                </tr>
+                <tr *ngIf="mesajParola.length > 0">
+                  <td class="atentionare">{{ mesajParola }}</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <button type="submit" class="butoaneCreareCont">Creare cont</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+          <div class="right">
+            <img src="../../assets/login.jpeg" alt="Orthovision">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
