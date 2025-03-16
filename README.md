@@ -15,7 +15,7 @@ Angular - pentru partea de front-end și back-end
 
 PyTorch - librărie utilizată pentru învățarea și antrenarea modelului
 
-API extern - pentru preluarea radiografiilor.
+API - pentru comunicarea cu rețeaua neuronală.
 
 PostgreSQL - baza de date utilizată pentru salvarea informațiilor de logare, administrată cu pgAdmin4
 
